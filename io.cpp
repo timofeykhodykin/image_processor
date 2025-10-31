@@ -11,7 +11,7 @@
 BinaryReader::BinaryReader() {
 }
 
-BinaryReader::BinaryReader(const std::string& filename) : in_(filename) {
+BinaryReader::BinaryReader(const std::string& filename) : in_(filename, std::ios::binary) {
 }
 
 template <std::integral T>
@@ -49,7 +49,7 @@ void BinaryReader::Skip(size_t bytes_count) {
 BinaryWriter::BinaryWriter() {
 }
 
-BinaryWriter::BinaryWriter(const std::string& filename) : out_(filename) {
+BinaryWriter::BinaryWriter(const std::string& filename) : out_(filename, std::ios::binary) {
 }
 
 template <std::integral T>
